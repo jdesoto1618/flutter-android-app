@@ -2,11 +2,18 @@ import 'package:flutter/material.dart';
 import 'dart:math' as math;
 
 void main(List<String> args) {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
   const MyApp({super.key});
+
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  int count = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -23,12 +30,18 @@ class MyApp extends StatelessWidget {
                   .primaries[math.Random().nextInt(Colors.primaries.length)],
               width: 500,
               height: 500,
+              child: Text(
+                'Pressed `plus` $count times',
+                style: const TextStyle(fontSize: 32),
+              ),
             );
           },
         ),
         floatingActionButton: FloatingActionButton(
           onPressed: () {
-            print('pressed button!');
+            setState(() {
+              count++;
+            });
           },
           child: const Icon(Icons.add),
         ),
