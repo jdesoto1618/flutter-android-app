@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'dart:math' as math;
 
 void main(List<String> args) {
   runApp(MyApp());
@@ -15,22 +16,15 @@ class MyApp extends StatelessWidget {
           backgroundColor: Colors.blueGrey,
           title: const Text('Hello from Flutter'),
         ),
-        body: ListView(
-          scrollDirection: Axis.vertical,
-          addAutomaticKeepAlives: false,
-          children: [
-            Container(
-              color: Colors.red,
-              width: 125,
-              height: 125,
-              child: const Icon(Icons.backpack),
-            ),
-            const Icon(Icons.cabin),
-            const Align(
-              alignment: Alignment.topLeft,
-              child: Icon(Icons.backpack),
-            ),
-          ],
+        body: ListView.builder(
+          itemBuilder: (_, index) {
+            return Container(
+              color: Colors
+                  .primaries[math.Random().nextInt(Colors.primaries.length)],
+              width: 500,
+              height: 500,
+            );
+          },
         ),
         floatingActionButton: FloatingActionButton(
           onPressed: () {
