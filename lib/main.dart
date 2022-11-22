@@ -18,8 +18,13 @@ class MyApp extends StatelessWidget {
           backgroundColor: Colors.blueGrey,
           title: const Text('Flutter Home!'),
         ),
-        body: ElevatedButton(
-          child: const Text('About'),
+        body: IconButton(
+          icon: Hero(
+            tag: 'hero image',
+            child: Image.network(
+                'https://previews.123rf.com/images/tethysimagingllc/tethysimagingllc1705/tethysimagingllc170500004/78066844-the-word-hero-from-a-typewriter-on-a-white-background.jpg'),
+          ),
+          iconSize: 75,
           onPressed: () {
             Navigator.push(
               context,
@@ -43,6 +48,11 @@ class AboutScreen extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.greenAccent,
         title: const Text('About Page'),
+      ),
+      body: Hero(
+        tag: 'hero image',
+        child: Image.network(
+            'https://previews.123rf.com/images/tethysimagingllc/tethysimagingllc1705/tethysimagingllc170500004/78066844-the-word-hero-from-a-typewriter-on-a-white-background.jpg'),
       ),
     );
   }
