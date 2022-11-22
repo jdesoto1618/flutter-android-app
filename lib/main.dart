@@ -21,8 +21,7 @@ class MyApp extends StatelessWidget {
         body: IconButton(
           icon: Hero(
             tag: 'hero image',
-            child: Image.network(
-                'https://previews.123rf.com/images/tethysimagingllc/tethysimagingllc1705/tethysimagingllc170500004/78066844-the-word-hero-from-a-typewriter-on-a-white-background.jpg'),
+            child: Image.network('https://picsum.photos/367/254'),
           ),
           iconSize: 75,
           onPressed: () {
@@ -51,8 +50,7 @@ class AboutScreen extends StatelessWidget {
       ),
       body: Hero(
         tag: 'hero image',
-        child: Image.network(
-            'https://previews.123rf.com/images/tethysimagingllc/tethysimagingllc1705/tethysimagingllc170500004/78066844-the-word-hero-from-a-typewriter-on-a-white-background.jpg'),
+        child: Image.network('https://picsum.photos/367/254'),
       ),
     );
   }
